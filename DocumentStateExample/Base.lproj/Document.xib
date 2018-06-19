@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="Document">
+            <connections>
+                <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="xOd-HO-29H" userLabel="Window">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="133" y="235" width="507" height="413"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <value key="minSize" type="size" width="94" height="86"/>
+            <view key="contentView" wantsLayer="YES" id="gIp-Ho-8D9" customClass="SeaContainerView">
+                <rect key="frame" x="0.0" y="0.0" width="507" height="413"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <connections>
+                    <outlet property="viewController" destination="8kN-mi-Jzz" id="j1b-7a-f3s"/>
+                </connections>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="70B1AFD1-7486-4779-8418-7ED13C3B30F6" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="a9e-p3-AxC">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="6BA605D2-EDC2-412A-BA7F-D4BB53C4BC60" label="Back" paletteLabel="Back" tag="-1" image="NSLeftFacingTriangleTemplate" id="YYt-R6-Osg">
+                        <connections>
+                            <action selector="doGoBack:" target="-2" id="4b6-rh-Bgh"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="80D4E043-5504-4911-907D-4C95676AB2F7" label="Forward" paletteLabel="Forward" tag="-1" image="NSRightFacingTriangleTemplate" id="Xgd-qY-XOF">
+                        <connections>
+                            <action selector="doGoForward:" target="-2" id="kTp-fN-W2g"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="KUJ-vg-8G7"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="j8W-28-jI6"/>
+                    <toolbarItem implicitItemIdentifier="6E05B73D-08F1-4B72-B970-C1B4471AC2EE" label="Custom View" paletteLabel="Custom View" tag="1" id="aXw-dZ-zZr">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="96" height="22"/>
+                        <size key="maxSize" width="96" height="22"/>
+                        <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" tag="1" textCompletion="NO" id="raG-K7-bAh">
+                            <rect key="frame" x="0.0" y="14" width="96" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="veF-ry-3JT">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </searchFieldCell>
+                            <connections>
+                                <binding destination="-2" name="value" keyPath="self.state.search" id="hxp-fB-HyZ"/>
+                            </connections>
+                        </searchField>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="YYt-R6-Osg"/>
+                    <toolbarItem reference="Xgd-qY-XOF"/>
+                    <toolbarItem reference="j8W-28-jI6"/>
+                    <toolbarItem reference="aXw-dZ-zZr"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-x8E"/>
+            </connections>
+        </window>
+        <viewController id="8kN-mi-Jzz" customClass="MainViewController"/>
+        <userDefaultsController representsSharedInstance="YES" id="h9q-e5-ULB"/>
+    </objects>
+    <resources>
+        <image name="NSLeftFacingTriangleTemplate" width="9" height="12"/>
+        <image name="NSRightFacingTriangleTemplate" width="9" height="12"/>
+    </resources>
+</document>

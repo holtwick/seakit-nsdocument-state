@@ -1,0 +1,416 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		439C00BF20D4175500C6E952 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 439C00BE20D4175500C6E952 /* AppDelegate.m */; };
+		439C00C220D4175500C6E952 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 439C00C120D4175500C6E952 /* Document.m */; };
+		439C00C520D4175500C6E952 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 439C00C320D4175500C6E952 /* Document.xib */; };
+		439C00C720D4175500C6E952 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439C00C620D4175500C6E952 /* Assets.xcassets */; };
+		439C00CA20D4175500C6E952 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 439C00C820D4175500C6E952 /* MainMenu.xib */; };
+		439C00CD20D4175500C6E952 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 439C00CC20D4175500C6E952 /* main.m */; };
+		439C00D620D4176800C6E952 /* SeaState.m in Sources */ = {isa = PBXBuildFile; fileRef = 439C00D520D4176800C6E952 /* SeaState.m */; };
+		439C00DD20D4471700C6E952 /* SeaStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 439C00DC20D4471700C6E952 /* SeaStateViewController.m */; };
+		439C00EA20D4488900C6E952 /* SeaContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 439C00E920D4488900C6E952 /* SeaContainerView.m */; };
+		439C00EE20D44AB300C6E952 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 439C00EC20D44AB300C6E952 /* MainViewController.m */; };
+		439C00EF20D44AB300C6E952 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 439C00ED20D44AB300C6E952 /* MainViewController.xib */; };
+		439C00F220D454FA00C6E952 /* SeaObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 439C00F020D454FA00C6E952 /* SeaObject.m */; };
+		439C00F620D45C2B00C6E952 /* ContentAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 439C00F420D45C2B00C6E952 /* ContentAViewController.m */; };
+		439C00F720D45C2B00C6E952 /* ContentAViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 439C00F520D45C2B00C6E952 /* ContentAViewController.xib */; };
+		439C00FB20D5AC3200C6E952 /* ContentBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 439C00F920D5AC3200C6E952 /* ContentBViewController.m */; };
+		439C00FC20D5AC3200C6E952 /* ContentBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 439C00FA20D5AC3200C6E952 /* ContentBViewController.xib */; };
+		439C00FF20D5B94400C6E952 /* SeaStateDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 439C00FE20D5B94400C6E952 /* SeaStateDocument.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		439C00BA20D4175500C6E952 /* DocumentStateExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentStateExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		439C00BD20D4175500C6E952 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		439C00BE20D4175500C6E952 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		439C00C020D4175500C6E952 /* Document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		439C00C120D4175500C6E952 /* Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		439C00C420D4175500C6E952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
+		439C00C620D4175500C6E952 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		439C00C920D4175500C6E952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		439C00CB20D4175500C6E952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		439C00CC20D4175500C6E952 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		439C00CE20D4175500C6E952 /* DocumentStateExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DocumentStateExample.entitlements; sourceTree = "<group>"; };
+		439C00D420D4176800C6E952 /* SeaState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeaState.h; sourceTree = "<group>"; };
+		439C00D520D4176800C6E952 /* SeaState.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeaState.m; sourceTree = "<group>"; };
+		439C00DB20D4471700C6E952 /* SeaStateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeaStateViewController.h; sourceTree = "<group>"; };
+		439C00DC20D4471700C6E952 /* SeaStateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeaStateViewController.m; sourceTree = "<group>"; };
+		439C00E820D4488900C6E952 /* SeaContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeaContainerView.h; sourceTree = "<group>"; };
+		439C00E920D4488900C6E952 /* SeaContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeaContainerView.m; sourceTree = "<group>"; };
+		439C00EB20D44AB300C6E952 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		439C00EC20D44AB300C6E952 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		439C00ED20D44AB300C6E952 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		439C00F020D454FA00C6E952 /* SeaObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeaObject.m; sourceTree = "<group>"; };
+		439C00F120D454FA00C6E952 /* SeaObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeaObject.h; sourceTree = "<group>"; };
+		439C00F320D45C2B00C6E952 /* ContentAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentAViewController.h; sourceTree = "<group>"; };
+		439C00F420D45C2B00C6E952 /* ContentAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentAViewController.m; sourceTree = "<group>"; };
+		439C00F520D45C2B00C6E952 /* ContentAViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentAViewController.xib; sourceTree = "<group>"; };
+		439C00F820D5AC3200C6E952 /* ContentBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentBViewController.h; sourceTree = "<group>"; };
+		439C00F920D5AC3200C6E952 /* ContentBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentBViewController.m; sourceTree = "<group>"; };
+		439C00FA20D5AC3200C6E952 /* ContentBViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentBViewController.xib; sourceTree = "<group>"; };
+		439C00FD20D5B94400C6E952 /* SeaStateDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeaStateDocument.h; sourceTree = "<group>"; };
+		439C00FE20D5B94400C6E952 /* SeaStateDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeaStateDocument.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		439C00B720D4175500C6E952 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		439C00B120D4175500C6E952 = {
+			isa = PBXGroup;
+			children = (
+				439C00BC20D4175500C6E952 /* DocumentStateExample */,
+				439C00BB20D4175500C6E952 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		439C00BB20D4175500C6E952 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				439C00BA20D4175500C6E952 /* DocumentStateExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		439C00BC20D4175500C6E952 /* DocumentStateExample */ = {
+			isa = PBXGroup;
+			children = (
+				439C00D720D4187300C6E952 /* State */,
+				439C00BD20D4175500C6E952 /* AppDelegate.h */,
+				439C00BE20D4175500C6E952 /* AppDelegate.m */,
+				439C00C020D4175500C6E952 /* Document.h */,
+				439C00C120D4175500C6E952 /* Document.m */,
+				439C00C320D4175500C6E952 /* Document.xib */,
+				439C00EB20D44AB300C6E952 /* MainViewController.h */,
+				439C00EC20D44AB300C6E952 /* MainViewController.m */,
+				439C00ED20D44AB300C6E952 /* MainViewController.xib */,
+				439C00F320D45C2B00C6E952 /* ContentAViewController.h */,
+				439C00F420D45C2B00C6E952 /* ContentAViewController.m */,
+				439C00F520D45C2B00C6E952 /* ContentAViewController.xib */,
+				439C00F820D5AC3200C6E952 /* ContentBViewController.h */,
+				439C00F920D5AC3200C6E952 /* ContentBViewController.m */,
+				439C00FA20D5AC3200C6E952 /* ContentBViewController.xib */,
+				439C00C620D4175500C6E952 /* Assets.xcassets */,
+				439C00C820D4175500C6E952 /* MainMenu.xib */,
+				439C00CB20D4175500C6E952 /* Info.plist */,
+				439C00CC20D4175500C6E952 /* main.m */,
+				439C00CE20D4175500C6E952 /* DocumentStateExample.entitlements */,
+			);
+			path = DocumentStateExample;
+			sourceTree = "<group>";
+		};
+		439C00D720D4187300C6E952 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				439C00F120D454FA00C6E952 /* SeaObject.h */,
+				439C00F020D454FA00C6E952 /* SeaObject.m */,
+				439C00D420D4176800C6E952 /* SeaState.h */,
+				439C00D520D4176800C6E952 /* SeaState.m */,
+				439C00FD20D5B94400C6E952 /* SeaStateDocument.h */,
+				439C00FE20D5B94400C6E952 /* SeaStateDocument.m */,
+				439C00DB20D4471700C6E952 /* SeaStateViewController.h */,
+				439C00DC20D4471700C6E952 /* SeaStateViewController.m */,
+				439C00E820D4488900C6E952 /* SeaContainerView.h */,
+				439C00E920D4488900C6E952 /* SeaContainerView.m */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		439C00B920D4175500C6E952 /* DocumentStateExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 439C00D120D4175600C6E952 /* Build configuration list for PBXNativeTarget "DocumentStateExample" */;
+			buildPhases = (
+				439C00B620D4175500C6E952 /* Sources */,
+				439C00B720D4175500C6E952 /* Frameworks */,
+				439C00B820D4175500C6E952 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DocumentStateExample;
+			productName = DocumentStateExample;
+			productReference = 439C00BA20D4175500C6E952 /* DocumentStateExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		439C00B220D4175500C6E952 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Dirk Holtwick";
+				TargetAttributes = {
+					439C00B920D4175500C6E952 = {
+						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 439C00B520D4175500C6E952 /* Build configuration list for PBXProject "DocumentStateExample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 439C00B120D4175500C6E952;
+			productRefGroup = 439C00BB20D4175500C6E952 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				439C00B920D4175500C6E952 /* DocumentStateExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		439C00B820D4175500C6E952 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				439C00C720D4175500C6E952 /* Assets.xcassets in Resources */,
+				439C00C520D4175500C6E952 /* Document.xib in Resources */,
+				439C00F720D45C2B00C6E952 /* ContentAViewController.xib in Resources */,
+				439C00FC20D5AC3200C6E952 /* ContentBViewController.xib in Resources */,
+				439C00CA20D4175500C6E952 /* MainMenu.xib in Resources */,
+				439C00EF20D44AB300C6E952 /* MainViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		439C00B620D4175500C6E952 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				439C00DD20D4471700C6E952 /* SeaStateViewController.m in Sources */,
+				439C00F220D454FA00C6E952 /* SeaObject.m in Sources */,
+				439C00EA20D4488900C6E952 /* SeaContainerView.m in Sources */,
+				439C00C220D4175500C6E952 /* Document.m in Sources */,
+				439C00EE20D44AB300C6E952 /* MainViewController.m in Sources */,
+				439C00CD20D4175500C6E952 /* main.m in Sources */,
+				439C00F620D45C2B00C6E952 /* ContentAViewController.m in Sources */,
+				439C00BF20D4175500C6E952 /* AppDelegate.m in Sources */,
+				439C00FB20D5AC3200C6E952 /* ContentBViewController.m in Sources */,
+				439C00FF20D5B94400C6E952 /* SeaStateDocument.m in Sources */,
+				439C00D620D4176800C6E952 /* SeaState.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		439C00C320D4175500C6E952 /* Document.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				439C00C420D4175500C6E952 /* Base */,
+			);
+			name = Document.xib;
+			sourceTree = "<group>";
+		};
+		439C00C820D4175500C6E952 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				439C00C920D4175500C6E952 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		439C00CF20D4175600C6E952 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		439C00D020D4175600C6E952 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		439C00D220D4175600C6E952 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DocumentStateExample/DocumentStateExample.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8SS3YPUJH9;
+				INFOPLIST_FILE = DocumentStateExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.holtwick.mac.DocumentStateExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		439C00D320D4175600C6E952 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DocumentStateExample/DocumentStateExample.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8SS3YPUJH9;
+				INFOPLIST_FILE = DocumentStateExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.holtwick.mac.DocumentStateExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		439C00B520D4175500C6E952 /* Build configuration list for PBXProject "DocumentStateExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				439C00CF20D4175600C6E952 /* Debug */,
+				439C00D020D4175600C6E952 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		439C00D120D4175600C6E952 /* Build configuration list for PBXNativeTarget "DocumentStateExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				439C00D220D4175600C6E952 /* Debug */,
+				439C00D320D4175600C6E952 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 439C00B220D4175500C6E952 /* Project object */;
+}
