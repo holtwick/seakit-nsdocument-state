@@ -7,7 +7,7 @@
 
 @interface SeaStateViewController : NSViewController 
 
-@property (readonly) Document *document;
+@property (nonatomic) Document *document;
 
 - (void)setupController;
 - (void)cleanupController;

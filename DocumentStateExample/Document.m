@@ -12,7 +12,11 @@
 }
 
 - (NSString *)windowNibName {
-    return @"Document";
+    return @"Document";    
+}
+
+- (NSString *)myMessage {
+    return @"Message from NSDocument";
 }
 
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError {

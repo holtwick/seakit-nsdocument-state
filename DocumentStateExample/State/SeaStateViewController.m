@@ -18,14 +18,33 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
 @property NSMutableArray <SeaStateObserver *> *binders;
 @end
 
-@implementation SeaStateViewController
+@implementation SeaStateViewController {
+    __weak Document *_document;
+}
 
-+ (NSSet<NSString *> *)keyPathsForValuesAffectingDocument {
-    return [NSSet setWithObject:@"representedObject"];
+- (void)setDocument:(Document *)document {
+    NSLog(@"for %@ setDocument %@", self.className, document);
+    if (self.document) {
+        [self cleanupController];
+    }
+    _document = document;
+    if (self.document) {
+        [self setupController];
+    }
 }
 
 - (Document *)document {
-    return (id)self.representedObject;
+    return _document;
+}
+
+- (void)viewWillAppear {
+    [super viewWillAppear];
+    [self bind:@"document" toObject:self withKeyPath:@"self.view.window.windowController.document" options:nil];
+}
+
+- (void)viewDidDisappear {
+    [self unbind:@"document"];
+    [super viewDidDisappear];
 }
 
 - (void)observeKeyPath:(NSString *)keyPath action:(void (^)(id newValue))block {
@@ -87,18 +106,18 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
     self.binders = nil;
 }
 
-- (void)setRepresentedObject:(id)representedObject {
-    NSLog(@"set represented object %@", representedObject);
-    if (representedObject == self.representedObject || [representedObject isEqual:self.representedObject]) {
-        return;
-    }
-    if (self.representedObject) {
-        [self cleanupController];
-    }
-    [super setRepresentedObject:representedObject];
-    if (self.representedObject) {
-        [self setupController];
-    }
-}
+//- (void)setRepresentedObject:(id)representedObject {
+//    NSLog(@"set represented object %@", representedObject);
+//    if (representedObject == self.representedObject || [representedObject isEqual:self.representedObject]) {
+//        return;
+//    }
+//    if (self.representedObject) {
+//        [self cleanupController];
+//    }
+//    [super setRepresentedObject:representedObject];
+//    if (self.representedObject) {
+//        [self setupController];
+//    }
+//}
 
 @end

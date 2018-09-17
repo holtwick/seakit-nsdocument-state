@@ -73,7 +73,7 @@
 }
 
 - (id)objectForKey:(id)aKey {
-    NSLog(@"objectForKey:%@ => %@", aKey, [_properties objectForKey:aKey]);
+    // NSLog(@"objectForKey:%@ => %@", aKey, [_properties objectForKey:aKey]);
     return [_properties objectForKey:aKey];
 }
 
