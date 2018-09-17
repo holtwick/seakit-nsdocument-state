@@ -4,6 +4,26 @@
 
 @implementation SeaContainerView
 
+//- (void)awakeFromNib {
+//    [super awakeFromNib];
+//
+//    if (self.backgroundColor) {
+//        self.wantsLayer = YES;
+//        self.layer.backgroundColor = self.backgroundColor.CGColor;
+//    }
+//}
+
+- (void)setBackgroundColor:(NSColor *)backgroundColor {
+    _backgroundColor = backgroundColor;
+    self.wantsLayer = YES;
+    self.layer.backgroundColor = self.backgroundColor.CGColor;
+}
+
+- (void)prepareForInterfaceBuilder {
+    self.wantsLayer = YES;
+    self.layer.backgroundColor = self.backgroundColor.CGColor;
+}
+
 - (void)setRepresentedObject:(id)representedObject {
     if (representedObject == _representedObject || [representedObject isEqual:_representedObject]) {
         return;
@@ -12,11 +32,11 @@
     [self willChangeValueForKey:@"representedObject"];
     _representedObject = representedObject;
     _viewController.representedObject = representedObject; // Pass it on to viewController which will do the same for its subcontrollers
-//    for (NSView *view in self.subviews) {
-//        if ([view isKindOfClass:[SeaContainerView class]]) {
-//            ((SeaContainerView *)view).representedObject = self.representedObject;
-//        }
-//    }
+    //    for (NSView *view in self.subviews) {
+    //        if ([view isKindOfClass:[SeaContainerView class]]) {
+    //            ((SeaContainerView *)view).representedObject = self.representedObject;
+    //        }
+    //    }
     [self didChangeValueForKey:@"representedObject"];
 }
 
