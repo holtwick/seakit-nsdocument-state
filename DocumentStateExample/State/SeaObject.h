@@ -25,6 +25,8 @@
  *   can be serialized easily to JSON and other formats.
  *
  *   MAKE SURE to add @dynamic for any property you define in a subclass of SeaObject!
+ *
+ *   More details at https://holtwick.de/blog/seaobject
  */
 
 @protocol SeaObjectDelegate

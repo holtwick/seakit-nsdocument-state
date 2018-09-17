@@ -99,6 +99,7 @@
         </customView>
         <arrayController objectClassName="NSArray" editable="NO" preservesSelection="NO" id="8DW-8M-wNb">
             <connections>
+                <binding destination="-2" name="selectionIndexes" keyPath="self.document.state.tabsel" id="2vh-15-tZn"/>
                 <binding destination="-2" name="contentArray" keyPath="self.content" id="sVt-sO-t7h"/>
             </connections>
         </arrayController>

@@ -21,15 +21,15 @@
     else {
         self.containerView.viewController = nil;
     }
+    SeaStateViewController *viewController = (id)self.containerView.viewController;
+    viewController.document = self.document;
 }
 
 - (void)setupController {
     __weak typeof(self) weakSelf = self;
 
     [super setupController];
-
-    self.containerView.representedObject = self.representedObject;
-
+ 
     [self observeKeyPath:@"document.state.selection" action:^(id newValue) {
         typeof(self) self = weakSelf;
         [self showViewControllerBy:self.document.state.selection];

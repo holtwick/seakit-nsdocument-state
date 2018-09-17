@@ -19,7 +19,8 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
 @end
 
 @implementation SeaStateViewController {
-    Document *_document;
+    __weak Document *_document;
+    BOOL _bound;
 }
 
 - (void)setDocument:(Document *)document {
@@ -40,15 +41,27 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
 - (Document *)document {
     return _document;
 }
- 
+
 - (void)viewWillAppear {
     [super viewWillAppear];
+    //    if (!_bound) {
+    //        [self bind:@"document" toObject:self withKeyPath:@"self.view.window.windowController.document" options:nil];
+    //        _bound = YES;
+    //    }
     self.document = self.view.window.windowController.document;
 }
 
 - (void)viewDidDisappear {
-    self.document = nil; // Make sure to tear down observers etc.
+    self.document = nil;
+    //    if (_bound) {
+    //        [self unbind:@"document"];
+    //        _bound = NO;
+    //    }
     [super viewDidDisappear];
+}
+
+- (void)dealloc {
+    self.document = nil;
 }
 
 - (void)observeKeyPath:(NSString *)keyPath action:(void (^)(id newValue))block {
@@ -93,7 +106,7 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
     self.binders = [[NSMutableArray alloc] init];
 }
 
-- (void)cleanupController {   
+- (void)cleanupController {
     for (SeaStateObserver *ob in self.binders) {
         [self removeObserver:self
                   forKeyPath:ob.keyPath

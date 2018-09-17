@@ -3,7 +3,7 @@
 #import "SeaContainerView.h"
 
 @implementation SeaContainerView
- 
+
 - (void)setBackgroundColor:(NSColor *)backgroundColor {
     _backgroundColor = backgroundColor;
     self.wantsLayer = YES;
@@ -24,6 +24,7 @@
 
     // Remove old content, new viewcontroller will have different ones
     if (_viewController) {
+        [_viewController removeFromParentViewController];
         for (NSView *subView in self.subviews.reverseObjectEnumerator) {
             [subView removeFromSuperview];
         }
@@ -32,7 +33,10 @@
     _viewController = viewController;
 
     if(_viewController) {
-        NSView *view = _viewController.view;
+        if (self.parentViewController) {
+            [self.parentViewController addChildViewController:_viewController];
+        }
+        NSView *view = _viewController.view;        
         view.frame = self.bounds;
         view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
         [self addSubview:view];

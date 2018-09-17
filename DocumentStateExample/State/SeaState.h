@@ -8,6 +8,7 @@
 @property NSString *selection;
 @property NSString *search;
 @property NSNumber *firstResponderTag;
+@property NSIndexSet *tabsel;
 @end
  
 
