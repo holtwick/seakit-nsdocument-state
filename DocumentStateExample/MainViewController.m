@@ -42,10 +42,11 @@
 }
 
 - (void)viewDidAppear {
-    [super viewWillAppear];
+    [super viewDidAppear];
 
     __weak typeof(self) weakSelf = self;
     [self observeKeyPath:@"document.state.firstResponderTag" action:^(id newValue) {
+        //    id newValue = self.document.state.firstResponderTag;
         NSInteger tag = [newValue integerValue];
         if (tag > 0) {
             typeof(self) self = weakSelf;
@@ -61,9 +62,9 @@
     
     [self observeKeyPath:@"view.window.firstResponder" action:^(id newValue) {
         typeof(self) self = weakSelf;
-        
+
         NSLog(@"firstResponder: %@", newValue);
-        
+
         NSInteger tag = -1;
         NSView *currentKeyView = (NSView *)self.view.window.firstResponder;
         while (currentKeyView && [currentKeyView isKindOfClass:[NSView class]] /*&& [currentKeyView isDescendantOf:self.view]*/ ) {
@@ -73,11 +74,11 @@
             }
             currentKeyView = currentKeyView.superview;
         }
-        
-        NSLog(@"Tag %@#", @(tag));
-        if (tag > 0) {
-            self.document.state.firstResponderTag = @(tag);
-        }
+
+        NSLog(@"Tag %@ %@", @(tag), self.document);
+        // if (tag > 0) {
+        self.document.state.firstResponderTag = @(tag);
+        // }
     }];
 }
 

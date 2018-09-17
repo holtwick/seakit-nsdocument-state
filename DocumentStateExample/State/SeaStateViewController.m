@@ -19,8 +19,7 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
 @end
 
 @implementation SeaStateViewController {
-    __strong Document *_document;
-    BOOL _didCreateView;
+    Document *_document;
 }
 
 - (void)setDocument:(Document *)document {
@@ -28,13 +27,13 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
         return;
     }
     NSLog(@"for %@ setDocument %@", self.className, document);
-    if (self.document) {
+    if (_document) {
         [self cleanupController];
     }
     [self willChangeValueForKey:@"document"];
     _document = document;
     [self didChangeValueForKey:@"document"];
-    if (self.document) {
+    if (_document) {
         [self setupController];
     }
 }
@@ -42,30 +41,18 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
 - (Document *)document {
     return _document;
 }
-
-- (NSView *)view {
-    id view = super.view;
-    _didCreateView = !!view;
-    return view;
-}
-
+ 
 - (void)viewWillAppear {
     [super viewWillAppear];
-    NSLog(@"exposed %@", self.exposedBindings);
-    if (_didCreateView) {
-        self.document = self.view.window.windowController.document;
-    }
-    if (self.exposedBindings.count < 0) {
-        [self bind:@"document" toObject:self withKeyPath:@"self.view.window.windowController.document" options:nil];
-        //  @{ NSAllowsNullArgumentBindingOption: @YES,
-        //     NSContinuouslyUpdatesValueBindingOption: @YES
-        //     }];
-    }
+    self.document = self.view.window.windowController.document;
+    // NSLog(@"exposed %@ %@" ,self.exposedBindings, self.view.window.windowController.document);
+    // NSAssert(self.exposedBindings.count == 0, @"No previous bindings");
+    // [self bind:@"document" toObject:self withKeyPath:@"self.view.window.windowController.document" options:nil];
 }
 
 - (void)viewDidDisappear {
-    NSLog(@"for %@ unsetDocument %@", self.className, nil);
-    [self unbind:@"document"];
+    //    NSLog(@"for %@ unsetDocument %@", self.className, nil);
+    //    [self unbind:@"document"];
     self.document = nil; // Make sure to tear down observers etc.
     [super viewDidDisappear];
 }
@@ -112,14 +99,6 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
     self.binders = [[NSMutableArray alloc] init];
 }
 
-//- (void)viewWillAppear {
-//    [super viewWillAppear];
-//    for (SeaStateObserver *ob in self.binders) {
-//        id initialValue = [self valueForKeyPath:ob.keyPath];
-//        ob.action(initialValue);
-//    }
-//}
-
 - (void)cleanupController {
     NSLog(@"cleanup binders: %@", self.binders);
     for (SeaStateObserver *ob in self.binders) {
@@ -129,19 +108,5 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
     }
     self.binders = nil;
 }
-
-//- (void)setRepresentedObject:(id)representedObject {
-//    NSLog(@"set represented object %@", representedObject);
-//    if (representedObject == self.representedObject || [representedObject isEqual:self.representedObject]) {
-//        return;
-//    }
-//    if (self.representedObject) {
-//        [self cleanupController];
-//    }
-//    [super setRepresentedObject:representedObject];
-//    if (self.representedObject) {
-//        [self setupController];
-//    }
-//}
 
 @end
