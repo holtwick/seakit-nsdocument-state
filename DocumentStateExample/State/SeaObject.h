@@ -12,6 +12,10 @@
 #define hxPopArgs
 #endif
 
+// KeyPath Helper https://holtwick.de/blog/keypath-refatoring
+
+#define keyPath(k) YES ? @#k : (k ? @"": nil)
+
 // Apply methods
 
 #define hxApply0(target, sel)             (  hxPushArgs ([((NSObject *)(target)) respondsToSelector:(sel)] ? [((NSObject *)(target)) performSelector:(sel)] : nil) hxPopArgs )
@@ -25,6 +29,8 @@
  *   can be serialized easily to JSON and other formats.
  *
  *   MAKE SURE to add @dynamic for any property you define in a subclass of SeaObject!
+ *
+ *   More details at https://holtwick.de/blog/seaobject
  */
 
 @protocol SeaObjectDelegate

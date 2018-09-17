@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43657E5B214FD64B003EC455 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 43657E5A214FD64B003EC455 /* README.md */; };
 		439C00BF20D4175500C6E952 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 439C00BE20D4175500C6E952 /* AppDelegate.m */; };
 		439C00C220D4175500C6E952 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 439C00C120D4175500C6E952 /* Document.m */; };
 		439C00C520D4175500C6E952 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 439C00C320D4175500C6E952 /* Document.xib */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43657E5A214FD64B003EC455 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		439C00BA20D4175500C6E952 /* DocumentStateExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentStateExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		439C00BD20D4175500C6E952 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		439C00BE20D4175500C6E952 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -37,7 +39,6 @@
 		439C00C920D4175500C6E952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		439C00CB20D4175500C6E952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		439C00CC20D4175500C6E952 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		439C00CE20D4175500C6E952 /* DocumentStateExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DocumentStateExample.entitlements; sourceTree = "<group>"; };
 		439C00D420D4176800C6E952 /* SeaState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeaState.h; sourceTree = "<group>"; };
 		439C00D520D4176800C6E952 /* SeaState.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeaState.m; sourceTree = "<group>"; };
 		439C00DB20D4471700C6E952 /* SeaStateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeaStateViewController.h; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		439C00B120D4175500C6E952 = {
 			isa = PBXGroup;
 			children = (
+				43657E5A214FD64B003EC455 /* README.md */,
 				439C00BC20D4175500C6E952 /* DocumentStateExample */,
 				439C00BB20D4175500C6E952 /* Products */,
 			);
@@ -108,7 +110,6 @@
 				439C00C820D4175500C6E952 /* MainMenu.xib */,
 				439C00CB20D4175500C6E952 /* Info.plist */,
 				439C00CC20D4175500C6E952 /* main.m */,
-				439C00CE20D4175500C6E952 /* DocumentStateExample.entitlements */,
 			);
 			path = DocumentStateExample;
 			sourceTree = "<group>";
@@ -163,7 +164,7 @@
 						CreatedOnToolsVersion = 9.4.1;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -195,6 +196,7 @@
 				439C00C720D4175500C6E952 /* Assets.xcassets in Resources */,
 				439C00C520D4175500C6E952 /* Document.xib in Resources */,
 				439C00F720D45C2B00C6E952 /* ContentAViewController.xib in Resources */,
+				43657E5B214FD64B003EC455 /* README.md in Resources */,
 				439C00FC20D5AC3200C6E952 /* ContentBViewController.xib in Resources */,
 				439C00CA20D4175500C6E952 /* MainMenu.xib in Resources */,
 				439C00EF20D44AB300C6E952 /* MainViewController.xib in Resources */,
@@ -276,7 +278,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -295,7 +296,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -334,7 +335,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -347,7 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -357,10 +357,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = DocumentStateExample/DocumentStateExample.entitlements;
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 8SS3YPUJH9;
 				INFOPLIST_FILE = DocumentStateExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -375,10 +372,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = DocumentStateExample/DocumentStateExample.entitlements;
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 8SS3YPUJH9;
 				INFOPLIST_FILE = DocumentStateExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

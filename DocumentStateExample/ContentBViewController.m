@@ -7,15 +7,7 @@
 @end
 
 @implementation ContentBViewController
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-}
-
-- (void)setRepresentedObject:(id)representedObject {
-    [super setRepresentedObject:representedObject];
-}
-
+ 
 - (NSArray *)content {
     return @[ @"Lorem",
               @"ipsum",

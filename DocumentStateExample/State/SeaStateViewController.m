@@ -18,14 +18,42 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
 @property NSMutableArray <SeaStateObserver *> *binders;
 @end
 
-@implementation SeaStateViewController
+@implementation SeaStateViewController {
+    __weak Document *_document;
+    BOOL _bound;
+}
 
-+ (NSSet<NSString *> *)keyPathsForValuesAffectingDocument {
-    return [NSSet setWithObject:@"representedObject"];
+- (void)setDocument:(Document *)document {
+    if (document == self.document || [document isEqual:self.document]) {
+        return;
+    }
+    if (_document) {
+        [self cleanupController];
+    }
+    [self willChangeValueForKey:@"document"];
+    _document = document;
+    [self didChangeValueForKey:@"document"];
+    if (_document) {
+        [self setupController];
+    }
 }
 
 - (Document *)document {
-    return (id)self.representedObject;
+    return _document;
+}
+
+- (void)viewWillAppear {
+    [super viewWillAppear];
+    self.document = self.view.window.windowController.document;
+}
+
+- (void)viewDidDisappear {
+    self.document = nil;
+    [super viewDidDisappear];
+}
+
+- (void)dealloc {
+    self.document = nil;
 }
 
 - (void)observeKeyPath:(NSString *)keyPath action:(void (^)(id newValue))block {
@@ -33,7 +61,7 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
     ob.keyPath = keyPath;
     ob.action = block;
     [self.binders addObject:ob];
-
+    
     @try {
         id initialValue = [self valueForKeyPath:keyPath];
         block(initialValue);
@@ -41,7 +69,7 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
     @catch (id ex) {
         NSLog(@"Exception: %@", [ex description]);
     }
-
+    
     [self addObserver:self
            forKeyPath:keyPath
               options:0
@@ -70,14 +98,6 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
     self.binders = [[NSMutableArray alloc] init];
 }
 
-//- (void)viewWillAppear {
-//    [super viewWillAppear];
-//    for (SeaStateObserver *ob in self.binders) {
-//        id initialValue = [self valueForKeyPath:ob.keyPath];
-//        ob.action(initialValue);
-//    }
-//}
-
 - (void)cleanupController {
     for (SeaStateObserver *ob in self.binders) {
         [self removeObserver:self
@@ -85,20 +105,6 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
                      context:kSeaStateChangeObserver];
     }
     self.binders = nil;
-}
-
-- (void)setRepresentedObject:(id)representedObject {
-    NSLog(@"set represented object %@", representedObject);
-    if (representedObject == self.representedObject || [representedObject isEqual:self.representedObject]) {
-        return;
-    }
-    if (self.representedObject) {
-        [self cleanupController];
-    }
-    [super setRepresentedObject:representedObject];
-    if (self.representedObject) {
-        [self setupController];
-    }
 }
 
 @end

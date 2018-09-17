@@ -3,6 +3,5 @@
 #import "SeaStateViewController.h"
 
 @interface ContentBViewController : SeaStateViewController
-@property (readonly) NSArray *content;
-//@property id tabsel;
+@property (readonly) NSArray *content; 
 @end
