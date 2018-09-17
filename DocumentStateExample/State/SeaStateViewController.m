@@ -44,19 +44,11 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
 
 - (void)viewWillAppear {
     [super viewWillAppear];
-    //    if (!_bound) {
-    //        [self bind:@"document" toObject:self withKeyPath:@"self.view.window.windowController.document" options:nil];
-    //        _bound = YES;
-    //    }
     self.document = self.view.window.windowController.document;
 }
 
 - (void)viewDidDisappear {
     self.document = nil;
-    //    if (_bound) {
-    //        [self unbind:@"document"];
-    //        _bound = NO;
-    //    }
     [super viewDidDisappear];
 }
 
