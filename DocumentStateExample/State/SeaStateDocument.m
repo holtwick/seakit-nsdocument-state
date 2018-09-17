@@ -53,14 +53,14 @@
     [self.stateStack redo];
 }
 
-- (BOOL)validateToolbarItem:(NSToolbarItem *)item {
+- (BOOL)validateUserInterfaceItem:(id<NSValidatedUserInterfaceItem>)item {
     if (item.action == @selector(doGoBack:)) {
         return self.stateStack.canUndo;
     }
     if (item.action == @selector(doGoForward:)) {
         return self.stateStack.canRedo;
     }
-    return [super validateToolbarItem:item];
+    return [super validateUserInterfaceItem:item];
 }
 
 #pragma mark - Pass document as represented object
