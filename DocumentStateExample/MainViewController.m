@@ -58,24 +58,26 @@
             }];
         }
     }];
-
+    
     [self observeKeyPath:@"view.window.firstResponder" action:^(id newValue) {
         typeof(self) self = weakSelf;
-
+        
         NSLog(@"firstResponder: %@", newValue);
-
+        
         NSInteger tag = -1;
         NSView *currentKeyView = (NSView *)self.view.window.firstResponder;
         while (currentKeyView && [currentKeyView isKindOfClass:[NSView class]] /*&& [currentKeyView isDescendantOf:self.view]*/ ) {
             tag = currentKeyView.tag;
-            if (tag >= 0) {
+            if (tag > 0) {
                 break;
             }
             currentKeyView = currentKeyView.superview;
         }
-
+        
         NSLog(@"Tag %@#", @(tag));
-        self.document.state.firstResponderTag = @(tag);
+        if (tag > 0) {
+            self.document.state.firstResponderTag = @(tag);
+        }
     }];
 }
 

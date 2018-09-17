@@ -7,7 +7,7 @@
 
 @implementation SeaState
 
-@dynamic selection, uuid, search, tabsel, firstResponderTag;
+@dynamic selection, uuid, search, firstResponderTag;
 
 - (void)configure {
     // self.uuid = NSUUID.UUID.UUIDString;

@@ -3,16 +3,7 @@
 #import "SeaContainerView.h"
 
 @implementation SeaContainerView
-
-//- (void)awakeFromNib {
-//    [super awakeFromNib];
-//
-//    if (self.backgroundColor) {
-//        self.wantsLayer = YES;
-//        self.layer.backgroundColor = self.backgroundColor.CGColor;
-//    }
-//}
-
+ 
 - (void)setBackgroundColor:(NSColor *)backgroundColor {
     _backgroundColor = backgroundColor;
     self.wantsLayer = YES;
@@ -24,29 +15,6 @@
     self.layer.backgroundColor = self.backgroundColor.CGColor;
 }
 
-- (void)setRepresentedObject:(id)representedObject {
-    if (representedObject == _representedObject || [representedObject isEqual:_representedObject]) {
-        return;
-    }
-
-    [self willChangeValueForKey:@"representedObject"];
-    _representedObject = representedObject;
-    _viewController.representedObject = representedObject; // Pass it on to viewController which will do the same for its subcontrollers
-    //    for (NSView *view in self.subviews) {
-    //        if ([view isKindOfClass:[SeaContainerView class]]) {
-    //            ((SeaContainerView *)view).representedObject = self.representedObject;
-    //        }
-    //    }
-    [self didChangeValueForKey:@"representedObject"];
-}
-
-//- (void)addSubview:(NSView *)view {
-//    if ([view isKindOfClass:[SeaContainerView class]]) {
-//        ((SeaContainerView *)view).representedObject = self.representedObject;
-//    }
-//    [super addSubview:view];
-//}
-
 - (void)setViewController:(NSViewController *)viewController {
 
     // Avoid useless set
@@ -56,7 +24,6 @@
 
     // Remove old content, new viewcontroller will have different ones
     if (_viewController) {
-        _viewController.representedObject = nil;
         for (NSView *subView in self.subviews.reverseObjectEnumerator) {
             [subView removeFromSuperview];
         }
@@ -66,7 +33,6 @@
 
     if(_viewController) {
         NSView *view = _viewController.view;
-        _viewController.representedObject = self.representedObject;
         view.frame = self.bounds;
         view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
         [self addSubview:view];

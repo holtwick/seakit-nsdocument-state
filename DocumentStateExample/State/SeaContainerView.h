@@ -7,8 +7,7 @@
 IB_DESIGNABLE
 @interface SeaContainerView : NSView
 
-@property (nullable, nonatomic, strong) id representedObject;
-// @property (weak, nonatomic) IBOutlet NSViewController *viewController;
+@property (nullable, nonatomic, strong) id representedObject; 
 @property (strong, nonatomic) IBOutlet NSViewController *viewController;
 @property (strong, nonatomic) IBInspectable NSColor *backgroundColor;
 

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -28,7 +29,7 @@
                     <rect key="frame" x="20" y="20" width="240" height="202"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                     <clipView key="contentView" ambiguous="YES" id="rc5-xH-MJH">
-                        <rect key="frame" x="1" y="23" width="238" height="178"/>
+                        <rect key="frame" x="1" y="0.0" width="238" height="201"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" tag="5" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="ulM-oe-ewQ" viewBased="YES" id="h5E-rR-MTm">
@@ -38,7 +39,7 @@
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn identifier="" width="116" minWidth="40" maxWidth="1000" id="Ush-PU-Fhp">
+                                    <tableColumn width="116" minWidth="40" maxWidth="1000" id="Ush-PU-Fhp">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -99,7 +100,6 @@
         <arrayController objectClassName="NSArray" editable="NO" preservesSelection="NO" id="8DW-8M-wNb">
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="self.content" id="sVt-sO-t7h"/>
-                <binding destination="-2" name="selectionIndexes" keyPath="self.document.state.tabsel" id="x3e-y7-ZV4"/>
             </connections>
         </arrayController>
         <userDefaultsController representsSharedInstance="YES" id="seB-Xl-9yu"/>

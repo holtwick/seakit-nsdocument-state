@@ -19,15 +19,21 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
 @end
 
 @implementation SeaStateViewController {
-    __weak Document *_document;
+    __strong Document *_document;
+    BOOL _didCreateView;
 }
 
 - (void)setDocument:(Document *)document {
+    if (document == self.document || [document isEqual:self.document]) {
+        return;
+    }
     NSLog(@"for %@ setDocument %@", self.className, document);
     if (self.document) {
         [self cleanupController];
     }
+    [self willChangeValueForKey:@"document"];
     _document = document;
+    [self didChangeValueForKey:@"document"];
     if (self.document) {
         [self setupController];
     }
@@ -37,13 +43,30 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
     return _document;
 }
 
+- (NSView *)view {
+    id view = super.view;
+    _didCreateView = !!view;
+    return view;
+}
+
 - (void)viewWillAppear {
     [super viewWillAppear];
-    [self bind:@"document" toObject:self withKeyPath:@"self.view.window.windowController.document" options:nil];
+    NSLog(@"exposed %@", self.exposedBindings);
+    if (_didCreateView) {
+        self.document = self.view.window.windowController.document;
+    }
+    if (self.exposedBindings.count < 0) {
+        [self bind:@"document" toObject:self withKeyPath:@"self.view.window.windowController.document" options:nil];
+        //  @{ NSAllowsNullArgumentBindingOption: @YES,
+        //     NSContinuouslyUpdatesValueBindingOption: @YES
+        //     }];
+    }
 }
 
 - (void)viewDidDisappear {
+    NSLog(@"for %@ unsetDocument %@", self.className, nil);
     [self unbind:@"document"];
+    self.document = nil; // Make sure to tear down observers etc.
     [super viewDidDisappear];
 }
 
@@ -52,7 +75,7 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
     ob.keyPath = keyPath;
     ob.action = block;
     [self.binders addObject:ob];
-
+    
     @try {
         id initialValue = [self valueForKeyPath:keyPath];
         block(initialValue);
@@ -60,7 +83,7 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
     @catch (id ex) {
         NSLog(@"Exception: %@", [ex description]);
     }
-
+    
     [self addObserver:self
            forKeyPath:keyPath
               options:0
@@ -98,6 +121,7 @@ static void *kSeaStateChangeObserver = &kSeaStateChangeObserver;
 //}
 
 - (void)cleanupController {
+    NSLog(@"cleanup binders: %@", self.binders);
     for (SeaStateObserver *ob in self.binders) {
         [self removeObserver:self
                   forKeyPath:ob.keyPath
