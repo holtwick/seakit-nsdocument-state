@@ -45,7 +45,7 @@
     [super viewDidAppear];
 
     __weak typeof(self) weakSelf = self;
-    [self observeKeyPath:@"document.state.firstResponderTag" action:^(id newValue) {
+    [self observeKeyPath:keyPath(self.document.state.firstResponderTag) action:^(id newValue) {
         NSInteger tag = [newValue integerValue];
         if (tag > 0) {
             typeof(self) self = weakSelf;
@@ -59,7 +59,7 @@
         }
     }];
 
-    [self observeKeyPath:@"view.window.firstResponder" action:^(id newValue) {
+    [self observeKeyPath:keyPath(self.view.window.firstResponder) action:^(id newValue) {
         typeof(self) self = weakSelf;
         NSInteger tag = -1;
         NSView *currentKeyView = (NSView *)self.view.window.firstResponder;

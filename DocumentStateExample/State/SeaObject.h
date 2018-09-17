@@ -12,6 +12,10 @@
 #define hxPopArgs
 #endif
 
+// KeyPath Helper https://holtwick.de/blog/keypath-refatoring
+
+#define keyPath(k) YES ? @#k : (k ? @"": nil)
+
 // Apply methods
 
 #define hxApply0(target, sel)             (  hxPushArgs ([((NSObject *)(target)) respondsToSelector:(sel)] ? [((NSObject *)(target)) performSelector:(sel)] : nil) hxPopArgs )
