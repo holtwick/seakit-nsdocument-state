@@ -3,6 +3,8 @@
 #import "SeaObject.h"
 #import <objc/runtime.h>
 
+// For details see https://holtwick.de/blog/seaobject
+
 @implementation SeaObject {
     __strong NSMutableDictionary *_properties;
     BOOL _needsSave;
@@ -13,9 +15,9 @@
     if (self != [SeaObject self]) {
         NSArray *danger = [self getDangerousPropertyNames];
         if (danger) {
-            //            cerror(@"sea", @"In class <%@> dangerous properties have been identified. Add the follwing code:\n\n@dynamic %@\n",
-            //                   NSStringFromClass(self),
-            //                   [danger componentsJoinedByString:@", "]);
+            NSLog(@"In class <%@> dangerous properties have been identified. Add the follwing code:\n\n@dynamic %@\n",
+                  NSStringFromClass(self),
+                  [danger componentsJoinedByString:@", "]);
 #if DEBUG && MAC
             NSBeep();
 #endif
@@ -73,7 +75,7 @@
 }
 
 - (id)objectForKey:(id)aKey {
-    NSLog(@"objectForKey:%@ => %@", aKey, [_properties objectForKey:aKey]);
+    // NSLog(@"objectForKey:%@ => %@", aKey, [_properties objectForKey:aKey]);
     return [_properties objectForKey:aKey];
 }
 
@@ -128,7 +130,7 @@
 }
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key {
-//    XLogDebug(@"setValue:%@ forUndefinedKey:%@", value, key);
+    //    XLogDebug(@"setValue:%@ forUndefinedKey:%@", value, key);
     [self setObject:value forKey:key];
 }
 

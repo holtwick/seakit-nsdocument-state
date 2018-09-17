@@ -12,9 +12,9 @@
 }
 
 - (NSString *)windowNibName {
-    return @"Document";
+    return @"Document";    
 }
-
+ 
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError {
     [NSException raise:@"UnimplementedMethod" format:@"%@ is unimplemented", NSStringFromSelector(_cmd)];
     return nil;

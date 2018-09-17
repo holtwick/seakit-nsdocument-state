@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43657E5B214FD64B003EC455 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 43657E5A214FD64B003EC455 /* README.md */; };
 		439C00BF20D4175500C6E952 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 439C00BE20D4175500C6E952 /* AppDelegate.m */; };
 		439C00C220D4175500C6E952 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 439C00C120D4175500C6E952 /* Document.m */; };
 		439C00C520D4175500C6E952 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 439C00C320D4175500C6E952 /* Document.xib */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43657E5A214FD64B003EC455 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		439C00BA20D4175500C6E952 /* DocumentStateExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentStateExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		439C00BD20D4175500C6E952 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		439C00BE20D4175500C6E952 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		439C00B120D4175500C6E952 = {
 			isa = PBXGroup;
 			children = (
+				43657E5A214FD64B003EC455 /* README.md */,
 				439C00BC20D4175500C6E952 /* DocumentStateExample */,
 				439C00BB20D4175500C6E952 /* Products */,
 			);
@@ -193,6 +196,7 @@
 				439C00C720D4175500C6E952 /* Assets.xcassets in Resources */,
 				439C00C520D4175500C6E952 /* Document.xib in Resources */,
 				439C00F720D45C2B00C6E952 /* ContentAViewController.xib in Resources */,
+				43657E5B214FD64B003EC455 /* README.md in Resources */,
 				439C00FC20D5AC3200C6E952 /* ContentBViewController.xib in Resources */,
 				439C00CA20D4175500C6E952 /* MainMenu.xib in Resources */,
 				439C00EF20D44AB300C6E952 /* MainViewController.xib in Resources */,

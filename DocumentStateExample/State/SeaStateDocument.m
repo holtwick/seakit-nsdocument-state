@@ -23,7 +23,7 @@
 #pragma mark - State Navigation
 
 - (void)restoreState:(SeaState *)state {
-    NSLog(@"Restore state: %@", state);
+    NSLog(@"Restore state: %@ %@ %@", state, state.exposedBindings, self.state.exposedBindings);
     [self storeState];
     self.state = state;
 }
@@ -53,28 +53,14 @@
     [self.stateStack redo];
 }
 
-- (BOOL)validateToolbarItem:(NSToolbarItem *)item {
+- (BOOL)validateUserInterfaceItem:(id<NSValidatedUserInterfaceItem>)item {
     if (item.action == @selector(doGoBack:)) {
         return self.stateStack.canUndo;
     }
     if (item.action == @selector(doGoForward:)) {
         return self.stateStack.canRedo;
     }
-    return [super validateToolbarItem:item];
-}
-
-#pragma mark - Pass document as represented object
-
-- (void)addWindowController:(NSWindowController *)windowController {
-    [super addWindowController:windowController];
-    hxApply1(windowController.window.contentViewController, @selector(setRepresentedObject:), self);
-    hxApply1(windowController.window.contentView, @selector(setRepresentedObject:), self);
-}
-
-- (void)removeWindowController:(NSWindowController *)windowController {
-    hxApply1(windowController.window.contentView, @selector(setRepresentedObject:), nil);
-    hxApply1(windowController.window.contentViewController, @selector(setRepresentedObject:), nil);
-    [super removeWindowController:windowController];
+    return [super validateUserInterfaceItem:item];
 }
 
 @end
